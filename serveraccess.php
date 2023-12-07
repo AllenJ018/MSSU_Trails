@@ -1,4 +1,7 @@
 <?php
+if(isset($_SESSION)){
+session_destroy();
+}
 session_start();
 function alert($msg) 
 {
@@ -30,7 +33,7 @@ if (isset($_POST['submitbtn']))
 $row_name = $count_name->fetch_row();
 $row_pword = $count_pword->fetch_row();
 
-  if((int)$row_name[0] == 1 && (int)$row_pword[0] == 1)
+  if((int)$row_name[0] == 1 && (int)$row_pword[0] >= 1)
   {
     $user = mysqli_query($con, "SELECT user_id FROM mssu_trails.users
     WHERE mssu_trails.users.user_name = '$uname' AND
