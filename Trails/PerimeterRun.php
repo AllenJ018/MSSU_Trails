@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dormitory Shuffle</title>
+    <title>Perimeter Run</title>
     <style>
         body {
             margin: 0;
@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
         }
 		.top-section {
-            background-image: url('Dorms.jpg');
+            background-image: url('Trail.jpg');
             /* Specify background image behavior */
             background-size: cover; /* Cover the entire container */
             background-position: center; /* Center the image */
@@ -53,29 +53,43 @@
 <body>
 	<div class="top-section">
 		<div class="textbox">
-			<h2>MSSU Dormitory Shuffle</h2>
-			<p>Spend some time on the Residence Life side of campus while completing the Dormitory Shuffle.
-			This nearly half-mile course will take you around the many different dormitory facilities 
-			MSSU has to offer students. From the 4-bedroom quads, to the private rooms in the Lion Village, there is something 
-			for everyone. </p>
+			<h2>MSSU Perimeter Run</h2>
+			<p>The MSSU Perimeter Run has slightly been modified in recent years.</p>
 			<br>
-			<p>Once you finish up the Shuffle, you might find yourself feeling a bit hungry. Take a 
-			break in the Mayes Student Life Center and grab a bite to eat in the dining hall. Featuring 
-			5 different all-you-can-eat buffets, all for one low price, you will not find a better deal 
-			for fueling back up.</p>
+			<p>This trail would take you on a 1.45 mile journey around the southern most part of campus. The trail
+			would take you around the soccer fields, hay fields, and biology pond. With the construction complete 
+			on the new walking trail, users can now incorporate the new trail and exercise equipment as part of their 
+			workout.</p>
+			<br>
+			<p>The MSSU Walking Trail connects the MSSU Campus with Joplin's Northpark Mall. This trail is complete with
+			lighting, security cameras, and emergency phones. In 2023, outdoor exercise equipment was added to the trail.</p>			
 		</div>
 	</div>
 	<div class="full-section">
         <div class="second-textbox">
             <h2>Trail Images</h2>
 			<p>
-			<img src="Page photos\Dorms 2.jpg" alt="East Image">
-			<img src="Page photos\Dorms 3.jpg" alt="Apartments Image">	
-			<img src="Page photos\Dorms 4.jpg" alt="Lion Village Image">
-			<img src="Page photos\Quad.jpg" alt="Quads Image">
-			<img src="Page photos\Mayes.jpg" alt="Dining Image">
-			<img src="Page photos\Mayes 2.jpg" alt="Mayes Image">
+			<img src="Page photos\Soccer with Trail.jpg" alt="Soccer Field Image">
+			<img src="Page photos\Trail Overview.jpg" alt="Trail Overview Image">
+			<img src="Page photos\New Trail.jpg" alt="New Trail Image">
+		</div>
+
+       <div class='second-textbox' style="display: flex; flex-wrap: wrap; flex-direction: column;">
+            <h2>Comments</h2>
+            <?php
+                session_start();
+                $_SESSION['trailid'] = 11;
+                include('trailComments.php');  
+            ?>
+        
+            <link rel="stylesheet" type="text/css" href="btn.css">
+            <form method="post" action="addComment.php">
+                <textarea id="trail_comment" name="txtcomment" rows="4" cols="50"></textarea>
+                <br>
+                <input type="submit" class="sink-on-hover" value="Add Comment" name="insertComment">
+            </form>
         </div>
+
     </div>
 </body>
 </html>

@@ -78,6 +78,23 @@
 			<img src="Page photos\pool.jpg" alt="Pool Image">
 	
         </div>
+
+      <div class='second-textbox' style="display: flex; flex-wrap: wrap; flex-direction: column;">
+            <h2>Comments</h2>
+            <?php
+                session_start();
+                $_SESSION['trailid'] = 6;
+                include('trailComments.php');  
+            ?>
+        
+            <link rel="stylesheet" type="text/css" href="btn.css">
+            <form method="post" action="addComment.php">
+                <textarea id="trail_comment" name="txtcomment" rows="4" cols="50"></textarea>
+                <br>
+                <input type="submit" class="sink-on-hover" value="Add Comment" name="insertComment">
+            </form>
+        </div>
+
     </div>
 </body>
 </html>

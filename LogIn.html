@@ -12,12 +12,15 @@
 	<div class="another-outline"><div>
     <div class="login-container">
         <h1>MSSU Trails</h1>
-        <form id="login-form" method="post">
+        <form id="login-form" method="post" action="serveraccess.php">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Log In</button>
+            <div>
+                <button name="submitbtn" type="submit" class="sink-on-hover" style="width:45%">Log In</button>
+                <button name="registerbtn" type="register" class="sink-on-hover" style="width:45%">Register</button>
+            </div>
         </form>
     </div>
 </body>

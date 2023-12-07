@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Perimeter Run</title>
+    <title>Stadium Breezeway</title>
     <style>
         body {
             margin: 0;
@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
         }
 		.top-section {
-            background-image: url('Trail.jpg');
+            background-image: url('Stadiums.jpg');
             /* Specify background image behavior */
             background-size: cover; /* Cover the entire container */
             background-position: center; /* Center the image */
@@ -53,26 +53,37 @@
 <body>
 	<div class="top-section">
 		<div class="textbox">
-			<h2>MSSU Perimeter Run</h2>
-			<p>The MSSU Perimeter Run has slightly been modified in recent years.</p>
-			<br>
-			<p>This trail would take you on a 1.45 mile journey around the southern most part of campus. The trail
-			would take you around the soccer fields, hay fields, and biology pond. With the construction complete 
-			on the new walking trail, users can now incorporate the new trail and exercise equipment as part of their 
-			workout.</p>
-			<br>
-			<p>The MSSU Walking Trail connects the MSSU Campus with Joplin's Northpark Mall. This trail is complete with
-			lighting, security cameras, and emergency phones. In 2023, outdoor exercise equipment was added to the trail.</p>			
-		</div>
+			<h2>MSSU Stadium Breezeway</h2>
+			<p>This trail will take you on a nearly half-mile adventure around the MSSU outdoor athletic complexes. 
+			While using the Breezeway trail, you will pass the Pat Lapira Softball Complex, 
+			the Warren Turner Baseball Complex, the Fred G. Hughes Stadium, and the Ron Richard Athletic Complex,
+			formerly known as the North End Zone. 
+			</div>
 	</div>
 	<div class="full-section">
         <div class="second-textbox">
             <h2>Trail Images</h2>
 			<p>
-			<img src="Page photos\Soccer with Trail.jpg" alt="Soccer Field Image">
-			<img src="Page photos\Trail Overview.jpg" alt="Trail Overview Image">
-			<img src="Page photos\New Trail.jpg" alt="New Trail Image">
-		</div>
+			<img src="Page photos\Baseball.jpg" alt="Baseball field Image">
+			<img src="Page photos\Softball.jpg" alt="Softball Field Image">	
+			<img src="Page photos\Stadium.jpg" alt="Football and RRAC Image">
+        </div>
+        <div class='second-textbox' style="display: flex; flex-wrap: wrap; flex-direction: column;">
+            <h2>Comments</h2>
+            <?php
+                session_start();
+                $_SESSION['trailid'] = 8;
+                include('trailComments.php');  
+            ?>
+        
+            <link rel="stylesheet" type="text/css" href="btn.css">
+            <form method="post" action="addComment.php">
+                <textarea id="trail_comment" name="txtcomment" rows="4" cols="50"></textarea>
+                <br>
+                <input type="submit" class="sink-on-hover" value="Add Comment" name="insertComment">
+            </form>
+        </div>
+
     </div>
 </body>
 </html>
