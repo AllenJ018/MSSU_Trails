@@ -83,6 +83,7 @@
                 session_start();
                 $_SESSION['trailid'] = 1;
                 include('trailComments.php');  
+             
             ?>
         
             <link rel="stylesheet" type="text/css" href="btn.css">

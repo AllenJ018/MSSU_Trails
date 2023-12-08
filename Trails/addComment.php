@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
  if(isset($_POST['insertComment']))
  {
     $host = "127.0.0.1";

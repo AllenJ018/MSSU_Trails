@@ -1,5 +1,13 @@
 <?php
+
 if(isset($_SESSION)){
+
+  if($_SESSION['uid']){
+    unset($_SESSION['uid']);
+  }
+  if($_SESSION['trailid']){
+    unset($_SESSION['trailid']);
+  }
 session_destroy();
 }
 session_start();
